@@ -1,0 +1,304 @@
+{
+  "type": "bundle",
+  "id": "bundle--db10203d-0ef9-4cb2-bea2-85874e672037",
+  "spec_version": "2.1",
+  "created": "2023-10-22T10:04:54.590Z",
+  "modified": "2023-10-22T10:04:54.590Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--a64bf781-5a32-4fec-b69f-cc381986609e",
+      "spec_version": "2.1",
+      "created": "2023-10-18T13:52:09.057Z",
+      "modified": "2023-10-22T10:04:54.590Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--345c4ac0-b317-4da1-aad4-10997885c682",
+      "start_refs": [
+        "attack-action--43872776-7be4-433c-92e2-ed2db09e0235"
+      ],
+      "name": "Attack Flow SSH on azure",
+      "scope": "incident"
+    },
+    {
+      "type": "identity",
+      "id": "identity--345c4ac0-b317-4da1-aad4-10997885c682",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.590Z",
+      "modified": "2023-10-22T10:04:54.590Z",
+      "name": "Frédéric Willems",
+      "identity_class": "class",
+      "contact_information": "f.willems@student.helmo.be"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--5ced976d-483e-4434-bc1a-87b93605d02b",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.590Z",
+      "modified": "2023-10-22T10:04:54.590Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Default Accounts",
+      "tactic_id": "TA0001",
+      "tactic_ref": "x-mitre-tactic--ffd5bcee-6e16-4dd2-8eca-7b3beedf33ca",
+      "technique_id": "T1078.001",
+      "technique_ref": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+      "description": "An attacker attempts to log in using default SSH credentials.",
+      "effect_refs": [
+        "attack-operator--fa6b31eb-23eb-45c4-b710-f6a9679aec7b"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--1f953086-0341-4c6a-81f2-bebb3907246f",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Password Spraying",
+      "tactic_id": "TA0001",
+      "tactic_ref": "x-mitre-tactic--ffd5bcee-6e16-4dd2-8eca-7b3beedf33ca",
+      "technique_id": "T1110.003",
+      "technique_ref": "attack-pattern--692074ae-bb62-4a5e-a735-02cb6bde458c",
+      "description": "Attackers attempt to gain access by spraying SSH passwords.",
+      "effect_refs": [
+        "attack-operator--fa6b31eb-23eb-45c4-b710-f6a9679aec7b"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--43872776-7be4-433c-92e2-ed2db09e0235",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "PowerShell",
+      "tactic_id": "TA0002",
+      "tactic_ref": "x-mitre-tactic--4ca45d45-df4d-4613-8980-bac22d278fa5",
+      "technique_id": "T1059.001",
+      "technique_ref": "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736",
+      "description": "Attackers may use PowerShell to execute commands on the target system.",
+      "effect_refs": [
+        "attack-action--5ced976d-483e-4434-bc1a-87b93605d02b",
+        "attack-action--1f953086-0341-4c6a-81f2-bebb3907246f"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f7a8ddb3-abee-48d8-b13a-5a53c7a9ef9f",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Boot or Logon Initialization Scripts",
+      "tactic_id": "TA0003",
+      "tactic_ref": "x-mitre-tactic--5bc1d813-693e-4823-9961-abf9af4b0e92",
+      "technique_id": "T1037",
+      "technique_ref": "attack-pattern--03259939-0b57-482f-8eb5-87c0e0d54334",
+      "description": "Attackers may modify the .bashrc or .bash_profile to maintain persistence."
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--c6aee42c-63f3-4c98-8b4d-9dd8d4402d23",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Obfuscated Files or Information",
+      "tactic_id": "TA0005",
+      "tactic_ref": "x-mitre-tactic--78b23412-0651-46d7-a540-170a1ce8bd5a",
+      "technique_id": "T1027",
+      "technique_ref": "attack-pattern--b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+      "description": "Attackers may obfuscate malicious files or scripts."
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--06f02264-0308-4cd6-921a-7d4004e18573",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Account Discovery",
+      "tactic_id": "TA0007",
+      "tactic_ref": "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "technique_id": "T1087",
+      "technique_ref": "attack-pattern--72b74d71-8169-42aa-92e0-e7b04b9f5a08",
+      "description": "Attackers search for local accounts on the compromised system.",
+      "effect_refs": [
+        "attack-action--f8fcf176-8a5e-406e-871a-b0d819379dfc"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--266946ad-48bc-4a31-9925-14b1df6f914f",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "File and Directory Discovery",
+      "tactic_id": "TA0009",
+      "tactic_ref": "x-mitre-tactic--d108ce10-2419-4cf9-a774-46161d6c6cfe",
+      "technique_id": "T1083",
+      "technique_ref": "attack-pattern--7bc57495-ea59-4380-be31-a64af124ef18",
+      "description": "Attackers may list directories and files using standard shell commands."
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f8fcf176-8a5e-406e-871a-b0d819379dfc",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote Services",
+      "tactic_id": "TA0008",
+      "tactic_ref": "x-mitre-tactic--7141578b-e50b-4dcc-bfa4-08a8dd689e9e",
+      "technique_id": "T0886",
+      "technique_ref": "attack-pattern--e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+      "description": "Attackers may use SSH to move laterally within the Azure environment."
+    },
+    {
+      "type": "user-account",
+      "id": "user-account--dfcfd2a6-19f5-4fac-b9c0-fb9571558469",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "display_name": "Bruteforced Account",
+      "is_privileged": true,
+      "is_disabled": false
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--fa6b31eb-23eb-45c4-b710-f6a9679aec7b",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "OR"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7a35f799-5614-46c0-9301-ac79a01fe184",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "user-account--dfcfd2a6-19f5-4fac-b9c0-fb9571558469",
+      "target_ref": "attack-action--f7a8ddb3-abee-48d8-b13a-5a53c7a9ef9f"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--74fcc5d4-f503-4dab-af48-34e6f8fe2bf6",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "user-account--dfcfd2a6-19f5-4fac-b9c0-fb9571558469",
+      "target_ref": "attack-action--c6aee42c-63f3-4c98-8b4d-9dd8d4402d23"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--b16fdb0d-cecd-41ee-80d9-eebfe34e6f94",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "user-account--dfcfd2a6-19f5-4fac-b9c0-fb9571558469",
+      "target_ref": "attack-action--06f02264-0308-4cd6-921a-7d4004e18573"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--2bef251a-f5f9-4bd3-9b2b-fb50fd3c82f5",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "user-account--dfcfd2a6-19f5-4fac-b9c0-fb9571558469",
+      "target_ref": "attack-action--266946ad-48bc-4a31-9925-14b1df6f914f"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c09f11dd-cd04-4469-a6bf-41e0aaacecc7",
+      "spec_version": "2.1",
+      "created": "2023-10-22T10:04:54.591Z",
+      "modified": "2023-10-22T10:04:54.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--fa6b31eb-23eb-45c4-b710-f6a9679aec7b",
+      "target_ref": "user-account--dfcfd2a6-19f5-4fac-b9c0-fb9571558469"
+    }
+  ]
+}

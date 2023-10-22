@@ -5,6 +5,7 @@
 ssh randomuser@VM
 ```
 
+(SentinelIncidentsDetection)
 We scan the syslog messages to handle cases like:
 - User exist
 - User does not exist, but still a connection
