@@ -9,4 +9,4 @@ Cette configuration Terraform déploie une infrastructure Azure typique pour une
 - Un compte de stockage pour les diagnostics de démarrage.
 - Une machine virtuelle Linux basée sur Ubuntu, configurée pour autoriser le trafic SSH entrant et personnalisable avec le nom d'utilisateur.
 
->> TODO: Ajouter l'image de l'infrastructure
+[Infrastructure](https://github.com/e180175/cloud_siem_soar/blob/master/infrastructure.png)
